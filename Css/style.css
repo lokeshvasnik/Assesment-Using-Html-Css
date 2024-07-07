@@ -1,5 +1,5 @@
 /* Form Styles */
-@import url(./Css/form.css);
+/* @import url(./Css/form.css); */
 
 /* Root */
 :root {
@@ -32,6 +32,12 @@ nav {
 }
 
 select {
+    background-color: var(--primary-yellow);
+}
+
+/* Hero Section */
+
+.hero-section {
     background-color: var(--primary-yellow);
 }
 
@@ -109,6 +115,12 @@ img {
 
 footer {
     background-color: var(--primary-yellow);
+}
+
+.footerBtn {
+    background-color: var(--primary-black);
+    color: var(--primary-white);
+    border-radius: 90%;
 }
 
 /* Marquee Animation */

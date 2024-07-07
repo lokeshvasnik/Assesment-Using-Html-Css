@@ -5,10 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Something About Company">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="./Css/style.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="./style.css">
     <title>Assesment Home Page</title>
 </head>
 
@@ -27,7 +28,7 @@
             <box-icon id="search" name='search' class="mx-2 cursor-pointer"></box-icon>
         </div>
         <div>
-            <h1 class="text-2xl font-bold">THE FIGMA STORE</h1>
+            <a href="./index.html" class="text-2xl font-bold">THE FIGMA STORE</a>
         </div>
         <div class="flex items-center">
             <box-icon type='solid' name='user' class="mx-2"></box-icon>
@@ -48,6 +49,25 @@
     <!-- Main -->
     <main>
 
+        <section class="hero-section py-10">
+            <div class="multiple-items">
+                <div>
+                    <img class="mx-20 w-96" src="./Img/banner1.png" alt="" />
+                </div>
+                <div>
+                    <img class="mx-20 w-96" src="./Img/banner2.png" alt="" />
+                </div>
+                <div>
+                    <img class="mx-20 w-96" src="./Img/banner3.png" alt="" />
+                </div>
+                <div>
+                    <img class="mx-20 w-96" src="./Img/banner4.png" alt="" />
+                </div>
+                <div>
+                    <img class="mx-20 w-96" src="./Img/banner5.png" alt="" />
+                </div>
+            </div>
+        </section>
 
         <section class="p-10 my-10">
             <h2 class="cursor-pointer text-[3rem] font-bold text-center leading-tight">FIGMA'S <i class='bx bxs-balloon'
@@ -62,67 +82,7 @@
             </h2>
         </section>
 
-        <section class="flex py-10 justify-center items-center flex-col md:flex-row">
-
-            <div>
-                <a onclick="redirectToProductPage('mens')" class="text-center" data-category="mens">
-
-                    <div class="home-image-container cursor-pointer">
-                        <img src="https://store.figma.com/cdn/shop/files/20240619_Figma_Store_5116_859eaff4-b3e6-4bd7-84cd-3c82f1b66a4d_1000x.jpg?v=1719507726"
-                            alt="Image 1" class="home-image rounded-lg" />
-
-                        <img src="https://store.figma.com/cdn/shop/files/37_8a934c54-da56-46b1-b522-a63e062140cf_1000x.png?v=1719338623"
-                            alt="Image 2" class="home-image rounded-lg hover-image" />
-                    </div>
-
-                    <div class="px-5 my-5 md:text-left">
-                        <div>CATEGORY</div>
-                        <p class="font-bold uppercase">
-                            6500
-                        </p>
-                    </div>
-                </a>
-            </div>
-            <div>
-                <a onclick="redirectToProductPage('womens')" class="text-center" data-category="womens">
-                    <div class="home-image-container cursor-pointer">
-                        <img src="https://store.figma.com/cdn/shop/files/20240619_Figma_Store_5116_859eaff4-b3e6-4bd7-84cd-3c82f1b66a4d_1000x.jpg?v=1719507726"
-                            alt="Image 1" class="home-image rounded-lg" />
-
-                        <img src="https://store.figma.com/cdn/shop/files/37_8a934c54-da56-46b1-b522-a63e062140cf_1000x.png?v=1719338623"
-                            alt="Image 2" class="home-image rounded-lg hover-image" />
-                    </div>
-
-                    <div class="px-5 my-5 md:text-left">
-                        <div>CATEGORY</div>
-                        <p class="font-bold uppercase">
-                            6500
-                        </p>
-                    </div>
-                </a>
-            </div>
-            <div>
-                <a onclick="redirectToProductPage('accessories')" class="text-center" data-category="accessories">
-
-                    <div class="home-image-container cursor-pointer">
-                        <img src="https://store.figma.com/cdn/shop/files/20240619_Figma_Store_5116_859eaff4-b3e6-4bd7-84cd-3c82f1b66a4d_1000x.jpg?v=1719507726"
-                            alt="Image 1" class="home-image rounded-lg" />
-
-                        <img src="https://store.figma.com/cdn/shop/files/37_8a934c54-da56-46b1-b522-a63e062140cf_1000x.png?v=1719338623"
-                            alt="Image 2" class="home-image rounded-lg hover-image" />
-                    </div>
-
-                    <div class="px-5 my-5 md:text-left">
-                        <div>CATEGORY</div>
-                        <p class="font-bold uppercase">
-                            6500
-                        </p>
-                    </div>
-                </a>
-            </div>
-
-
-
+        <section id="show-category-data" class="flex py-10 justify-center items-center flex-col md:flex-row">
         </section>
     </main>
 
@@ -202,8 +162,22 @@
 
     </footer>
 
-    <script src="https://unpkg.com/embla-carousel/embla-carousel.umd.js"></script>
-    <script src="./script.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="./Js/script.js"></script>
+
+    <!-- Jquerry -->
+    <script>
+        $(".multiple-items").slick({
+            infinite: true,
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            prevArrow: false,
+            nextArrow: false,
+        });
+    </script>
+
 
 </body>
 

@@ -247,30 +247,35 @@ function getUrlParameter(name) {
         : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
 
-// Display category data
+function displayData() {
+    const category = Object.keys(products[0]);
 
-function displayCateData() {
-    const category = getUrlParameter("category");
+    if (category) {
+        const container = document.getElementById("show-category-data");
 
-    const data = products[0][category];
-
-    if (data) {
-        const container = document.getElementById("product-data-container");
-
-        container.innerHTML = data
+        console.log(category);
+        container.innerHTML = category
             .map(
                 (item) => `
-            <a  class="md:flex md:flex-col product-item" data-id=${item.id}>
-                <div>
-                    <div class="category-container cursor-pointer">
-                        <img src="${item.thumbnail}" alt="${item.name}" class="image rounded-lg md:w-72" />
+            <div>
+                <a onclick="redirectToProductPage('${item}')" class="text-center" data-category="mens">
+
+                    <div class="home-image-container cursor-pointer">
+                        <img src="https://store.figma.com/cdn/shop/files/20240619_Figma_Store_5116_859eaff4-b3e6-4bd7-84cd-3c82f1b66a4d_1000x.jpg?v=1719507726"
+                            alt="Image 1" class="home-image rounded-lg" />
+
+                        <img src="https://store.figma.com/cdn/shop/files/37_8a934c54-da56-46b1-b522-a63e062140cf_1000x.png?v=1719338623"
+                            alt="Image 2" class="home-image rounded-lg hover-image" />
                     </div>
-                    <div class="my-5 flex justify-between mx-9 md:mx-auto">
-                        <p class="font-bold text-md">${item.title}</p>
-                        <p>${item.price}</p>
+
+                    <div class="px-5 my-5 md:text-left">
+                        <div class="uppercase">${item}</div>
+                        <p class="font-bold uppercase">
+                            6500
+                        </p>
                     </div>
-                </div>
-            </a>
+                </a>
+            </div>
         `
             )
             .join("");
@@ -288,102 +293,6 @@ function displayCateData() {
     }
 }
 
-function displaySingleProduct() {
-    const category = getUrlParameter("category");
-    const productId = getUrlParameter("id");
-
-    const data = products[0][category];
-
-    const matchedProduct = products[0].mens.find((product) => product.id == 2);
-
-    console.log(matchedProduct);
-
-    if (data) {
-        const container = document.getElementById(
-            "single-product-id-container"
-        );
-
-        container.innerHTML = `   <div class="grid grid-cols-1 md:grid-cols-8 gap-4 px-4 md:px-24 mt-10">
-                <div
-                    class="md:col-span-3 flex flex-row space-x-4 md:space-y-3  justify-center md:justify-start  md:flex-col  items-center md:items-end">
-
-                    <div key={index}>
-                        <img class="rounded-lg w-16 cursor-pointer active:border-4" src="" alt="smallDisplayImage" />
-                    </div>
-
-                </div>
-
-                <div class="md:col-span-2 md:col-start-4 flex justify-center">
-                    <img src="" class="rounded-lg w-64" alt="displayImage" />
-                </div>
-
-                <div class="md:col-span-3 md:col-start-6 space-y-5">
-                    <span
-                        class="bg-[#5ba857] rounded-lg text-black text-xs font-semibold me-2 px-3.5 py-1 dark:bg-green-900 dark:text-green-300">
-                        LAYER
-                    </span>
-                    <h3 class="text-3xl my-2 font-bold">
-                        Thirsrd
-                    </h3>
-                    <div class="flex space-x-2 mt-10">
-
-                        <button key={size} class="border-black text-black border-2 p-2 px-4 rounded-full">
-                            S
-                        </button>
-                        <button key={size} class="border-black text-black border-2 p-2 px-4 rounded-full">
-                            M
-                        </button>
-                        <button key={size} class="border-black text-black border-2 p-2 px-4 rounded-full">
-                            L
-                        </button>
-                        <button key={size} class="border-black text-black border-2 p-2 px-4 rounded-full">
-                            2xl
-                        </button>
-                        <button key={size} class="border-black text-black border-2 p-2 px-4 rounded-full">
-                            S
-                        </button>
-
-                    </div>
-                    <div class="mt-2 space-x-3 flex items-center">
-                        <button class="border-black text-black border-2 p-2 px-4 rounded-full">
-                            -
-                        </button>
-                        <span>0</span>
-                        <button class="border-black text-black border-2 p-2 px-4 rounded-full">+</button>
-
-
-                    </div>
-                    <div>
-                        <button class="border-black w-full mt-5 border-2 rounded-full font-bold bg-black-700">BUY
-                            NOW</button>
-                        <p class="mt-4 font-semibold">
-                            In case you missed it (how could you have missed
-                            it?) the shapes spell Figma.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        `;
-
-        document.querySelectorAll(".product-item").forEach((item) => {
-            item.addEventListener("click", function () {
-                const productId = this.getAttribute("data-id");
-                redirectToSingleProductPage(productId);
-            });
-        });
-    } else {
-        document.getElementById(
-            "product-data-container"
-        ).innerHTML = `<p>No Product Found </p>`;
-    }
-}
-
 window.onload = () => {
-    displayCateData();
+    displayData();
 };
-
-// When you come tomorrow
-// 1. Try to add the displaySingleProduct function in other javascript file and try
-// 2. Make sure you handle the id from url function properly
-// 3. Chatgpt Id = https://chatgpt.com/c/7f4c9167-3b62-4b0e-9ddc-0a7bf26670b9
-// 4.
