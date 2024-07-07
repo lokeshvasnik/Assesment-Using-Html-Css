@@ -10,41 +10,96 @@
     <link rel="stylesheet" href="./Css/style.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
-    <title>Assesment Home Page</title>
+    <title>Vistaar Assesment</title>
 </head>
 
 <body>
 
-    <!-- Input Field -->
-    <div class="inputSearch">
-        <input type="text" class="text-4xl w-full border-b border-black px-10 py-5 border-b-4 outline-none"
-            placeholder="Enter">
-    </div>
-    <!-- Navbar -->
-    <nav class="py-5 px-10 flex justify-between">
-        <div class="flex items-center">
-            <button class="navBtn py-1 px-5 border-2 border-black rounded-full font-bold text-sm mx-1">SHOP</button>
-            <button class="navBtn py-1 px-5 border-2 border-black rounded-full font-bold mx-1 text-sm">ABOUT</button>
-            <box-icon id="search" name='search' class="mx-2 cursor-pointer"></box-icon>
-        </div>
-        <div>
-            <a href="./index.html" class="text-2xl font-bold">THE FIGMA STORE</a>
-        </div>
-        <div class="flex items-center">
-            <box-icon type='solid' name='user' class="mx-2"></box-icon>
+    <section>
 
-            <select name="option" id="optim"
-                class="navBtn py-1 px-5 border-2 border-black rounded-full font-bold mx-1 text-sm">
-                <option value="UNITED STATES">UNITED STATES</option>
-                <option value="UNITED STATES">UNITED KINGDOM</option>
-                <option value="UNITED STATES">JAPAN</option>
-                <option value="UNITED STATES">CANADA</option>
-                <option value="UNITED STATES">EUROPEAN UNION</option>
-            </select>
-
-            <button class="navBtn py-1 px-5 border-2 border-black rounded-full font-bold mx-1 text-sm">CART 0</button>
+        <div class="inputSearch">
+            <input type="text" class="text-4xl w-full border-black px-10 py-5 border-b-4 outline-none"
+                placeholder="Enter" />
         </div>
-    </nav>
+
+        <nav class="py-5 px-10">
+            <div class="topnav_menu flex justify-between items-center">
+                <div class="flex items-center hidden md:flex">
+                    <button class="navBtn py-1 px-5 border-2 border-black rounded-full font-bold text-sm mx-1">
+                        SHOP
+                    </button>
+                    <button class="navBtn py-1 px-5 border-2 border-black rounded-full font-bold mx-1 text-sm">
+                        ABOUT
+                    </button>
+                    <Search class="cursor-pointer mx-2" onclick={inputHandlerFn} />
+                    <box-icon id="search" name='search' class="mx-2 cursor-pointer" onclick={inputHandlerFn}></box-icon>
+
+                </div>
+                <div class="flex space-x-2 navbarMob items-center">
+                    <Search class="cursor-pointer mx-2 md:hidden" onclick={inputHandlerFn} />
+                    <box-icon id="search" name='search' class="mx-2 cursor-pointer" onclick={inputHandlerFn}></box-icon>
+                    <a href="/">
+                        <h1 class="md:text-2xl font-bold">
+                            THE FIGMA STORE
+                        </h1>
+                    </a>
+                </div>
+                <div>
+                    <a href="/">
+                        <h1 class="md:text-2xl font-bold">
+                            THE FIGMA STORE
+                        </h1>
+                    </a>
+                </div>
+                <div class="flex items-center hidden md:flex">
+                    <box-icon type='solid' name='user' class="mx-2"></box-icon>
+                    <select name="option" id="optim"
+                        class="navBtn py-1 px-5 border-2 border-black rounded-full font-bold mx-1 text-sm">
+                        <option value="UNITED STATES">UNITED STATES</option>
+                        <option value="UNITED KINGDOM">
+                            UNITED KINGDOM
+                        </option>
+                        <option value="JAPAN">JAPAN</option>
+                        <option value="CANADA">CANADA</option>
+                        <option value="EUROPEAN UNION">
+                            EUROPEAN UNION
+                        </option>
+                    </select>
+                    <button class="navBtn py-1 px-5 border-2 border-black rounded-full font-bold mx-1 text-sm">
+                        CART 0
+                    </button>
+                </div>
+                <div class="md:hidden">
+                    <button id="hamburger" class="focus:outline-none" onclick=hamBurgerHandler()>
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
+                                d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div id="mobileMenu" class="hidden md:hidden flex-col items-center mt-4">
+                <button class="navBtn py-1 px-5 border-2 border-black rounded-full font-bold text-sm mx-1 my-1">
+                    SHOP
+                </button>
+                <button class="navBtn py-1 px-5 border-2 border-black rounded-full font-bold text-sm mx-1 my-1">
+                    ABOUT
+                </button>
+                <button class="navBtn py-1 px-5 border-2 border-black rounded-full font-bold text-sm mx-1 my-1">
+                    CART 0
+                </button>
+                <select name="option" id="optim"
+                    class="navBtn py-1 px-5 border-2 border-black rounded-full font-bold mx-1 text-sm">
+                    <option value="UNITED STATES">UNITED STATES</option>
+                    <option value="UNITED KINGDOM">UNITED KINGDOM</option>
+                    <option value="JAPAN">JAPAN</option>
+                    <option value="CANADA">CANADA</option>
+                    <option value="EUROPEAN UNION">EUROPEAN UNION</option>
+                </select>
+            </div>
+        </nav>
+    </section>
 
     <!-- Main -->
     <main>
@@ -162,6 +217,10 @@
 
     </footer>
 
+
+
+
+    <!-- Javascript -->
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
@@ -177,6 +236,7 @@
             nextArrow: false,
         });
     </script>
+
 
 
 </body>

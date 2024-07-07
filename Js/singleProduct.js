@@ -216,6 +216,31 @@ const products = [
 ];
 
 let count = 0;
+const buyNowBtn = document.getElementById("buyNowBtn");
+const modal = document.getElementById("modal");
+const closeModalBtn = document.getElementById("closeModalBtn");
+
+const searchBtn = document.getElementById("search");
+
+const inputDiv = document.querySelector(".inputSearch");
+
+searchBtn.addEventListener("click", () => {
+    inputDiv.classList.toggle("show");
+});
+
+document.getElementById("scrollToTopBtn").addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+// Hamburger men
+
+function inputHandlerFn() {
+    document.querySelector(".inputSearch").classList.toggle("show");
+}
+
+function hamBurgerHandler() {
+    document.getElementById("mobileMenu").classList.toggle("show");
+}
 
 function countIncrement() {
     count += 1;
@@ -256,7 +281,7 @@ function updateButtonState() {
     }
 
     buyNowBtn.addEventListener("click", () => {
-        console.log("clicked");
+        modal.classList.remove("hidden");
     });
 }
 let activeSize = 0;
@@ -290,8 +315,7 @@ function displaySingleProduct() {
 
     const category = getUrlParameter("category");
 
-    console.log(productId);
-    const matchedProduct = products[0].mens.find(
+    const matchedProduct = products[0][category].find(
         (product) => product.id == productId
     );
 
@@ -385,3 +409,8 @@ window.onload = () => {
     displaySingleProduct();
     renderSizeButtons();
 };
+
+closeModalBtn.addEventListener("click", (e) => {
+    modal.classList.add("hidden");
+    e.preventDefault();
+});

@@ -1,6 +1,28 @@
 // Display category data
 import products from "../data/data.js";
 
+const searchBtn = document.getElementById("search");
+
+const inputDiv = document.querySelector(".inputSearch");
+
+searchBtn.addEventListener("click", () => {
+    inputDiv.classList.toggle("show");
+});
+
+document.getElementById("scrollToTopBtn").addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+// Hamburger men
+
+function inputHandlerFn() {
+    document.querySelector(".inputSearch").classList.toggle("show");
+}
+
+function hamBurgerHandler() {
+    document.getElementById("mobileMenu").classList.toggle("show");
+}
+
 // Function to get URL parameter
 function getUrlParameter(name) {
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
@@ -13,8 +35,8 @@ function getUrlParameter(name) {
 
 // Redirect To Single Page
 
-function redirectToSingleProductPage(productId) {
-    window.location.href = `singleProduct.html?id=${productId}`;
+function redirectToSingleProductPage(productId, category) {
+    window.location.href = `singleProduct.html?id=${productId}&category=${category}`;
 }
 
 // Display Category
@@ -48,7 +70,7 @@ function displayCateData() {
         document.querySelectorAll(".product-item").forEach((item) => {
             item.addEventListener("click", function () {
                 const productId = this.getAttribute("data-id");
-                redirectToSingleProductPage(productId);
+                redirectToSingleProductPage(productId, category);
             });
         });
     } else {

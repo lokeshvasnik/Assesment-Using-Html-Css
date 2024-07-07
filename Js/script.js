@@ -233,8 +233,18 @@ function redirectToProductPage(category) {
     window.location.href = `category.html?category=${category}`;
 }
 
-function redirectToSingleProductPage(productId) {
-    window.location.href = `singleProduct.html?id=${productId}`;
+function redirectToSingleProductPage(productId, category) {
+    window.location.href = `singleProduct.html?id=${productId}&category=${category}`;
+}
+
+// Hamburger men
+
+function inputHandlerFn() {
+    document.querySelector(".inputSearch").classList.toggle("show");
+}
+
+function hamBurgerHandler() {
+    document.getElementById("mobileMenu").classList.toggle("show");
 }
 
 // Function to get URL parameter
@@ -253,7 +263,6 @@ function displayData() {
     if (category) {
         const container = document.getElementById("show-category-data");
 
-        console.log(category);
         container.innerHTML = category
             .map(
                 (item) => `
@@ -283,7 +292,7 @@ function displayData() {
         document.querySelectorAll(".product-item").forEach((item) => {
             item.addEventListener("click", function () {
                 const productId = this.getAttribute("data-id");
-                redirectToSingleProductPage(productId);
+                redirectToSingleProductPage(productId, category);
             });
         });
     } else {
