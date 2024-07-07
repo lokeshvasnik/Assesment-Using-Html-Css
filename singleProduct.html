@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sinple Product</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <!-- Input Field -->
+    <div class="inputSearch">
+        <input type="text" class="text-4xl w-full border-b border-black px-10 py-5 border-b-4 outline-none"
+            placeholder="Enter">
+    </div>
+    <!-- Navbar -->
+    <nav class="py-5 px-10 flex justify-between">
+        <div class="flex items-center">
+            <button class="navBtn py-1 px-5 border-2 border-black rounded-full font-bold text-sm mx-1">SHOP</button>
+            <button class="navBtn py-1 px-5 border-2 border-black rounded-full font-bold mx-1 text-sm">ABOUT</button>
+            <box-icon id="search" name='search' class="mx-2 cursor-pointer"></box-icon>
+        </div>
+        <div>
+            <h1 class="text-2xl font-bold">THE FIGMA STORE</h1>
+        </div>
+        <div class="flex items-center">
+            <box-icon type='solid' name='user' class="mx-2"></box-icon>
+
+            <select name="option" id="optim"
+                class="navBtn py-1 px-5 border-2 border-black rounded-full font-bold mx-1 text-sm">
+                <option value="UNITED STATES">UNITED STATES</option>
+                <option value="UNITED STATES">UNITED KINGDOM</option>
+                <option value="UNITED STATES">JAPAN</option>
+                <option value="UNITED STATES">CANADA</option>
+                <option value="UNITED STATES">EUROPEAN UNION</option>
+            </select>
+
+            <button class="navBtn py-1 px-5 border-2 border-black rounded-full font-bold mx-1 text-sm">CART 0</button>
+        </div>
+    </nav>
+
+    <section class="py-10  md:flex md:justify-evenly md:items-center">
+
+        <div id="single-product-id-container">
+
+
+        </div>
+
+
+
+    </section>
+
+
+    <footer class="mt-10 py-5">
+        <div class="grid gap-4 grid-cols-3 grid-rows-2 px-10 items-center justify-center">
+            <div class="col-span-1 md:col-span-1">
+                <ul
+                    class="flex justify-center items-center flex-col text-4xl space-y-2 font-semibold border rounded-full">
+                    <li>THE</li>
+                    <li>FIGMA</li>
+                    <li>STORE</li>
+                </ul>
+            </div>
+            <div class="col-span-1 md:col-span-1 flex">
+                <h1 class="text-3xl font-bold">OBJECTS <br> THAT INSPIRE.</h1>
+
+            </div>
+            <div class="col-span-1 md:col-span-1">
+                <ul class="text-lg space-y-2 font-semibold">
+                    <li><a href="#faq" class="hover:underline">FAQ</a></li>
+                    <li><a href="#contact" class="hover:underline">Contact Us</a></li>
+                    <li><a href="#privacy" class="hover:underline">Privacy Policy</a></li>
+                    <li><a href="#terms" class="hover:underline">Terms of Service</a></li>
+                </ul>
+            </div>
+            <!-- Social Links -->
+            <div class="flex">
+                <div class="flex space-x-10 text-3xl ml-40 ">
+
+                    <li class="hover:underline cursor-pointer list-none">FIGMA</li>
+                    <li class="hover:underline cursor-pointer list-none">TWITTER</li>
+                    <li class="hover:underline cursor-pointer list-none">INSTAGRAM</li>
+                    <li class="hover:underline cursor-pointer list-none">YOUTUBE</li>
+
+                </div>
+                <button id="scrollToTopBtn" class="footerBtn ml-80 px-3 py-2"><i
+                        class='bx bx-up-arrow-alt text-4xl'></i></button>
+            </div>
+        </div>
+        <div class="marquee">
+            <div class="marquee__slider">
+                <span>COLLECTION</span>
+                <span>OF</span>
+                <span>OBJECTS</span>
+                <span>FOR</span>
+                <span>OUR</span>
+                <span>TIME</span>
+                <span>ON</span>
+                <span>FIGMA'S</span>
+                <span>MARVELOUSLY</span>
+            </div>
+            <div class="marquee__slider">
+                <span>COLLECTION</span>
+                <span>OF</span>
+                <span>OBJECTS</span>
+                <span>FOR</span>
+                <span>OUR</span>
+                <span>TIME</span>
+                <span>ON</span>
+                <span>FIGMA'S</span>
+                <span>MARVELOUSLY</span>
+            </div>
+            <div class="marquee__slider">
+                <span>COLLECTION</span>
+                <span>OF</span>
+                <span>OBJECTS</span>
+                <span>FOR</span>
+                <span>OUR</span>
+                <span>TIME</span>
+                <span>ON</span>
+                <span>FIGMA'S</span>
+                <span>MARVELOUSLY</span>
+            </div>
+        </div>
+
+
+    </footer>
+    </footer>
+
+
+    <!-- Javascript -->
+    <script src="https://unpkg.com/embla-carousel/embla-carousel.umd.js"></script>
+    <script src="./script.js"></script>
+    <script src="./singleProduct.js"></script>
+</body>
+
+</html>
