@@ -13,13 +13,12 @@
 
 <body>
 
+    <!-- Navbar -->
     <section>
-
         <div class="inputSearch">
             <input type="text" class="text-4xl w-full border-black px-10 py-5 border-b-4 outline-none"
                 placeholder="Enter" />
         </div>
-
         <nav class="py-5 px-10">
             <div class="topnav_menu flex justify-between items-center">
                 <div class="flex items-center hidden md:flex">
@@ -29,28 +28,18 @@
                     <button class="navBtn py-1 px-5 border-2 border-black rounded-full font-bold mx-1 text-sm">
                         ABOUT
                     </button>
-                    <Search class="cursor-pointer mx-2" onclick={inputHandlerFn} />
-                    <box-icon id="search" name='search' class="mx-2 cursor-pointer" onclick={inputHandlerFn}></box-icon>
-
+                    <box-icon name='search' class="cursor-pointer mx-2" onclick="inputHandlerFn()"></box-icon>
                 </div>
-                <div class="flex space-x-2 navbarMob items-center">
-                    <Search class="cursor-pointer mx-2 md:hidden" onclick={inputHandlerFn} />
-                    <box-icon id="search" name='search' class="mx-2 cursor-pointer" onclick={inputHandlerFn}></box-icon>
-                    <a href="/">
-                        <h1 class="md:text-2xl font-bold">
-                            THE FIGMA STORE
-                        </h1>
-                    </a>
-                </div>
-                <div>
-                    <a href="/">
-                        <h1 class="md:text-2xl font-bold">
-                            THE FIGMA STORE
-                        </h1>
-                    </a>
+                <div class="flex space-x-2 navbarMob  items-center">
+                    <box-icon name='search' class="cursor-pointer mx-2 md:hidden" onclick="inputHandlerFn()"></box-icon>
+                    <Link to="/">
+                    <h1 class="md:text-2xl font-bold">
+                        THE FIGMA STORE
+                    </h1>
+                    </Link>
                 </div>
                 <div class="flex items-center hidden md:flex">
-                    <box-icon type='solid' name='user' class="mx-2"></box-icon>
+                    <box-icon name='user' class="mx-2" type='solid'></box-icon>
                     <select name="option" id="optim"
                         class="navBtn py-1 px-5 border-2 border-black rounded-full font-bold mx-1 text-sm">
                         <option value="UNITED STATES">UNITED STATES</option>
@@ -68,7 +57,7 @@
                     </button>
                 </div>
                 <div class="md:hidden">
-                    <button id="hamburger" class="focus:outline-none" onclick=hamBurgerHandler()>
+                    <button id="hamburger" class="focus:outline-none" onclick="hamBurgerHandler()">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                             xmlns="http://www.w3.org/2000/svg">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
@@ -204,6 +193,7 @@
 
     <!-- Javascript -->
     <script src="./Js/category.js" type="module"></script>
+    <script src="./Js/script.js"></script>
 
 </body>
 

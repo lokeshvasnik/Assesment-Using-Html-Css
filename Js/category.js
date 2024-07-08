@@ -1,14 +1,6 @@
 // Display category data
 import products from "../data/data.js";
 
-const searchBtn = document.getElementById("search");
-
-const inputDiv = document.querySelector(".inputSearch");
-
-searchBtn.addEventListener("click", () => {
-    inputDiv.classList.toggle("show");
-});
-
 document.getElementById("scrollToTopBtn").addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
 });
